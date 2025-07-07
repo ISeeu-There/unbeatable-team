@@ -1,6 +1,4 @@
-<!-- src/views/SignUp.vue -->
 <template>
-  <!-- Full‑screen background with centred card -->
   <v-main class="d-flex align-center justify-center">
     <!-- Card wrapper -->
     <v-card

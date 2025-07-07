@@ -76,4 +76,24 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+  /* WebKit */
+.content-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.content-scroll::-webkit-scrollbar-thumb {
+  background-color: #bdbdbd;
+  border-radius: 3px;
+}
+/* Firefox */
+.content-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #bdbdbd transparent;
+}
+/* inside HeaderSection.vue <style scoped> */
+.header-section {
+  position: sticky;
+  top: 0;
+  z-index: 1100;   /* above cards, below any dialogs */
+}
+
 }

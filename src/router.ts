@@ -4,6 +4,7 @@ import Signup from "./auth/Signup.vue";
 import Login from "./auth/Login.vue";
 import VerifyNumber from "./auth/VerifyNumber.vue";
 import Success from "./auth/Success.vue";
+import Home from "./pages/Home.vue";
 const routes = [
   { path: "/", redirect: "/login" },
 
@@ -18,6 +19,7 @@ const routes = [
   { path: "/login", name: "login", component: Login },
   { path: "/verify", name: "verify", component: VerifyNumber },
   { path: "/success", name: "success", component: Success },
+  { path: "/home", name: "home", component: Home },
 ];
 
 const router = createRouter({
