@@ -7,21 +7,6 @@
       class="mx-4 elevation-12 rounded-lg overflow-hidden"
     >
       <v-row no-gutters>
-        <!-- ▸ Left column — trophy image -->
-        <v-col
-          cols="12"
-          md="6"
-          class="d-flex align-center justify-center pa-8 border-md-e border-green-darken-2"
-        >
-          <v-img
-            src="/images/trophy.png"
-            alt="Trophy"
-            max-width="320"
-            class="mx-auto"
-            eager
-            contain
-          />
-        </v-col>
 
         <!-- ▸ Right column — form -->
         <v-col cols="12" md="6" class="pa-8 d-flex flex-column align-center">
