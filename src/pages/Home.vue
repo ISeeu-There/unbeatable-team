@@ -7,6 +7,8 @@
     <SearchSection />
 
     <v-main class="scroll-area">
+      <router-view />
+
       <TeamCardsSection />
     </v-main>
 
@@ -15,21 +17,11 @@
   </v-app>
 </template>
 
-<script>
+<script setup>
 import HeaderSection from "./components/HeaderSection.vue";
 import SearchSection from "./components/SearchSection.vue";
 import TeamCardsSection from "./components/TeamCardsSection.vue";
 import BottomNavigation from "./components/BottomNavigation.vue";
-
-export default {
-  name: "App",
-  components: {
-    HeaderSection,
-    SearchSection,
-    TeamCardsSection,
-    BottomNavigation,
-  },
-};
 </script>
 
 <style>

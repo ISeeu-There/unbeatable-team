@@ -1,13 +1,12 @@
 <template>
-  <!-- Expose the active index as a CSS variable -->
   <v-bottom-navigation
     v-model="activeTab"
     class="bottom-nav"
     height="70"
     grow
     :style="`--active-index: ${activeIndex}`"
+    @update:modelValue="handleTabChange"
   >
-    <!-- Define your buttons in a single array so index math is trivial -->
     <v-btn
       v-for="btn in navButtons"
       :key="btn.value"
@@ -22,36 +21,37 @@
   </v-bottom-navigation>
 </template>
 
-<script>
-export default {
-  name: "BottomNavigation",
-  data() {
-    return {
-      activeTab: "home",
-      navButtons: [
-        { value: "search", icon: "mdi-account-plus", size: 28 },
-        { value: "trophy", icon: "mdi-trophy", size: 28 },
-        { value: "home", icon: "mdi-home", size: 32 },
-        { value: "group", icon: "mdi-account-group", size: 28 },
-        { value: "profile", icon: "mdi-account-circle", size: 28 },
-      ],
-    };
-  },
-  computed: {
-    activeIndex() {
-      return this.navButtons.findIndex((b) => b.value === this.activeTab);
-    },
-  },
-  methods: {
-    iconColor(value) {
-      return value === this.activeTab ? "white" : "success";
-    },
-  },
+<script setup>
+import { computed, ref } from "vue";
+import { useRouter, useRoute } from "vue-router";
+
+const router = useRouter();
+const route = useRoute();
+
+const navButtons = [
+  { value: "friends", icon: "mdi-account-plus", size: 28 },
+  { value: "trophy", icon: "mdi-trophy", size: 28 },
+  { value: "home", icon: "mdi-home", size: 32 },
+  { value: "group", icon: "mdi-account-group", size: 28 },
+  { value: "portfolio", icon: "mdi-account-circle", size: 28 },
+];
+
+const activeTab = ref(route.name || "home");
+
+const handleTabChange = (selectedTab) => {
+  if (selectedTab !== route.name) {
+    router.push({ name: selectedTab });
+  }
 };
+
+const activeIndex = computed(() =>
+  navButtons.findIndex((b) => b.value === activeTab.value)
+);
+
+const iconColor = (value) => (value === activeTab.value ? "white" : "success");
 </script>
 
 <style scoped>
-/* --- Layout & bar --- */
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -60,10 +60,8 @@ export default {
   background: white;
   border-top: 1px solid #e0e0e0;
   z-index: 1000;
-
-  /* Number of buttons (kept in sync with navButtons.length) */
   --btn-count: 5;
-  --active-index: 0; /* overwritten by inline style */
+  --active-index: 0;
 }
 
 .bottom-nav::before {
@@ -77,12 +75,11 @@ export default {
   border-radius: 10%;
   transition: transform 0.3s ease;
   transform: translateX(calc(var(--active-index) * 100%));
-  z-index: -1; /* keep it behind the buttons */
+  z-index: -1;
 }
 
-/* --- Button tweaks --- */
 .nav-btn {
-  flex: 1 1 0; /* each btn takes equal space */
+  flex: 1 1 0;
   min-width: 0;
 }
 

@@ -54,13 +54,13 @@
             </v-card>
 
             <!-- Bio Section -->
-            <v-card
+            <v-btn
               class="bio-section mb-6 fade-in-up"
               elevation="2"
               style="animation-delay: 0.2s"
             >
               <v-card-text class="bio-text"> Bio </v-card-text>
-            </v-card>
+            </v-btn>
 
             <!-- Game Stats -->
             <v-row class="mb-6 fade-in-up" style="animation-delay: 0.3s">
@@ -137,7 +137,6 @@ const navigateTo = (section) => {
 
 <style scoped>
 .portfolio-container {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
   padding: 20px;
 }
@@ -215,6 +214,10 @@ const navigateTo = (section) => {
 }
 
 .bio-section {
+  display: flex;
+  justify-self: center;
+  width: 400px;
+  height: 100px;
   border-radius: 10px;
   background: #f0f0f0;
 }

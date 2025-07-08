@@ -1,6 +1,8 @@
 <template>
   <v-app>
     <v-main class="scroll-area">
+      <router-view />
+
       <PortfolioAnalysis />
     </v-main>
     <BottomNavigation />
