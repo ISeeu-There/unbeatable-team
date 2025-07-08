@@ -1,6 +1,6 @@
 <template>
   <v-app class="body">
-    <v-main>
+    <v-main class="h-100">
       <v-container fluid class="pa-8">
         <div class="form-container">
           <!-- Main Content Area -->

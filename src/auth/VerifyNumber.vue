@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main>
+    <v-main class="h-100">
       <v-container fluid class="pa-8">
         <!-- Progress Indicator -->
         <div class="d-flex justify-space-between mt-4">

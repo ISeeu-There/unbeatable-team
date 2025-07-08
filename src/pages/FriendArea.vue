@@ -12,9 +12,6 @@
 
       <UsersCard />
     </v-main>
-
-    <!-- fixed bottom nav -->
-    <BottomNavigation />
   </v-app>
 </template>
 

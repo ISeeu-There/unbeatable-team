@@ -3,14 +3,12 @@
     v-model="activeTab"
     class="bottom-nav"
     height="70"
-    grow
     :style="`--active-index: ${activeIndex}`"
-    @update:modelValue="handleTabChange"
   >
     <v-btn
       v-for="btn in navButtons"
       :key="btn.value"
-      :value="btn.value"
+      @click="handleTabChange((activeTab = btn.value))"
       variant="plain"
       class="nav-btn"
     >
@@ -22,7 +20,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
 
 const router = useRouter();
@@ -37,6 +35,8 @@ const navButtons = [
 ];
 
 const activeTab = ref(route.name || "home");
+
+watch(activeTab, (tab) => console.log({ tab }), { immediate: true });
 
 const handleTabChange = (selectedTab) => {
   if (selectedTab !== route.name) {

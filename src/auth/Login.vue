@@ -1,13 +1,12 @@
 <template>
   <!-- Full‑screen background with centred card -->
-  <v-main class="d-flex align-center justify-center" :style="bgStyle">
+  <v-main class="d-flex align-center justify-center h-100" :style="bgStyle">
     <!-- Card wrapper -->
     <v-card
       max-width="1024"
       class="mx-4 elevation-12 rounded-lg overflow-hidden"
     >
       <v-row no-gutters>
-
         <!-- ▸ Right column — form -->
         <v-col cols="12" md="6" class="pa-8 d-flex flex-column align-center">
           <!-- Headings -->

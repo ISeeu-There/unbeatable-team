@@ -1,15 +1,12 @@
 <template>
   <v-app class="body">
-    <v-main>
+    <v-main class="h-100">
       <v-container fluid class="pa-8">
-        <!-- Tab Header -->
         <div class="tab-header">
           <span class="tab-text">Personal Informations</span>
         </div>
         <div class="form-container">
-          <!-- Main Content Area -->
           <div class="content-area">
-            <!-- Left Side - Soccer Player Image -->
             <div class="left-section">
               <div class="image-container">
                 <img

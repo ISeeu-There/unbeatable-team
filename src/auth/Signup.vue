@@ -1,12 +1,11 @@
 <template>
-  <v-main class="d-flex align-center justify-center">
+  <v-main class="d-flex align-center justify-center h-100">
     <!-- Card wrapper -->
     <v-card
       max-width="1024"
       class="mx-4 elevation-12 rounded-lg overflow-hidden"
     >
       <v-row no-gutters>
-
         <!-- ▸ Right column — form -->
         <v-col cols="12" md="6" class="pa-8 d-flex flex-column align-center">
           <!-- Headings -->

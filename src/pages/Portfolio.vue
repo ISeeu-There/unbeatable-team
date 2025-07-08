@@ -5,7 +5,6 @@
 
       <PortfolioAnalysis />
     </v-main>
-    <BottomNavigation />
   </v-app>
 </template>
 
