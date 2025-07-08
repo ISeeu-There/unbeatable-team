@@ -5,6 +5,7 @@ import Login from "./auth/Login.vue";
 import VerifyNumber from "./auth/VerifyNumber.vue";
 import Success from "./auth/Success.vue";
 import Home from "./pages/Home.vue";
+import Portfolio from "./pages/Portfolio.vue";
 const routes = [
   { path: "/", redirect: "/login" },
 
@@ -20,6 +21,7 @@ const routes = [
   { path: "/verify", name: "verify", component: VerifyNumber },
   { path: "/success", name: "success", component: Success },
   { path: "/home", name: "home", component: Home },
+  { path: "/portfolio", name: "portfolio", component: Portfolio },
 ];
 
 const router = createRouter({

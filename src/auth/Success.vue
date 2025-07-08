@@ -20,7 +20,7 @@
               </div>
               <div>
                 <v-btn
-                  to="login"
+                  to="home"
                   class="next-button"
                   color="green"
                   size="large"
